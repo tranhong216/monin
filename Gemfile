@@ -5,11 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby "2.5.1"
 
+gem "rails", "~> 5.2.0"
 
-gem "rails", "~> 5.1.4"
 gem "bcrypt", "3.1.11"
-gem "sqlite3"
 gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -27,6 +27,9 @@ gem "carrierwave"
 gem "mini_magick"
 gem "i18n-js"
 gem "faker", "1.7.3"
+gem "pg"
+
+# gem 'mini_racer', platforms: :ruby
 
 
 group :development, :test do
@@ -42,7 +45,7 @@ group :development, :test do
   gem "rails_best_practices"
   gem "reek"
   gem "railroady"
-  gem "autoprefixer-rails"
+  gem "autoprefixer-rails", '8.6.5'
   gem "pry", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"

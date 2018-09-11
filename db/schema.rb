@@ -10,62 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180819131359) do
+ActiveRecord::Schema.define(version: 2018_09_11_063520) do
 
-  create_table "group_users", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "moneys", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "social_group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "microposts", force: :cascade do |t|
-    t.string "content"
-    t.integer "user_id"
-    t.string "picture"
-    t.integer "social_group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "sex"
-    t.date "date_of_birth"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
-  end
-
-  create_table "social_groups", force: :cascade do |t|
-    t.string "name"
+    t.float "amount"
+    t.text "description"
+    t.date "create_at"
+    t.integer "type_of_money"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "email"
+    t.string "password_digest"
+    t.string "remember_digest"
+    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
-    t.boolean "admin"
-    t.string "activation_digest"
-    t.boolean "activated"
-    t.datetime "activated_at"
-    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
