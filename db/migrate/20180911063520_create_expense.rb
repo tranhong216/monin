@@ -1,6 +1,6 @@
 class CreateExpense < ActiveRecord::Migration[5.1]
   def change
-    create_table :moneys do |t|
+    create_table :money do |t|
       t.integer :user_id
       t.float :amount
       t.text :description

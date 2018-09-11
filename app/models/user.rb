@@ -3,10 +3,7 @@ class User < ApplicationRecord
   ATTRIBUTE_PARAMS_PASSWORD = %i(password password_confirmation).freeze
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  has_many :expenses, class_name: Money.name,
-    foreign_key: :user_id, dependent: :destroy
-  has_many :incomes, class_name: Money.name,
-    foreign_key: :user_id, dependent: :destroy
+  has_many :money, dependent: :destroy
 
   scope :admins, ->{where admin: true}
 
@@ -39,6 +36,14 @@ class User < ApplicationRecord
     end
   end
 
+  def expenses
+    money.expense
+  end
+
+  def income
+    money.income
+  end
+
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
     return false if digest.blank?
@@ -47,6 +52,10 @@ class User < ApplicationRecord
 
   def current_user? current_user
     self == current_user
+  end
+
+  def forget
+    update_attributes remember_digest: nil
   end
 
   private

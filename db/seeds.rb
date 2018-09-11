@@ -13,5 +13,5 @@ password_confirmation: "123456", admin: true)
   name  = Faker::Name.name
   email = "test-#{n+1}@gmailtest.org"
   password = "123456"
-  User.create!(email: email, password: "123456", password_confirmation: "123456")
+  User.create!(name: name, email: email, password: "123456", password_confirmation: "123456")
 end
