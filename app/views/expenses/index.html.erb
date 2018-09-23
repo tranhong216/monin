@@ -1,0 +1,16 @@
+<% provide :title, "Lịch sử tiền đi" %>
+<div id="main">
+  <h1>Tiền đi tháng này như thế nào ?</h1>
+
+  <ul class="users">
+    <table>
+      <tr>
+        <th>Tên</th>
+        <th>Ngày</th>
+        <th>Tổng</th>
+      </tr>
+      <%= render @expenses %>
+    </table>
+  </ul>
+
+</div>

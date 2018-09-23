@@ -58,6 +58,10 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
+  def amount
+    money.expense.from_month.sum(:amount)
+  end
+
   private
 
   def email_downcase

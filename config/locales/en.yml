@@ -1,37 +1,6 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   alert_image_size: "should be less than 5MB"
-  base_title: "Ruby on Rails Tutorial Sample App"
+  base_title: "Tính Tiền chi tiêu"
   model:
     micropost:
       picture_size: "should be less than 5MB"
@@ -66,33 +35,10 @@ en:
         subject: "Activation Email Your Account In New App Toy"
       password_reset:
         subject: "Password Reset Email Your Account In New App Toy"
-  static_pages:
-    home:
-      title: "Home"
-      heading: "Hello world"
-      content: "This is home page."
-      signup: "Sign Up Now!"
-      heading_feed: "Micropost Feed"
-    about:
-      title: "About"
-      heading: "This is help page"
-      content: "<em><a href=%{home}> Ruby on Rails</a></em> is a
-      <a href=%{book}>book</a> and <a href=%{screencast_series}>
-      screencast series</a> o teach web development with <a href=%{RoR}>
-      Ruby on Rails</a>.This is the sample application for the tutorial."
-    help:
-      title: "Help"
-      heading: "this is about page"
-      content: "Click <a href=%{link}>here</a> to come Help Pages"
-    contact:
-      title: "Contact"
-      heading: "Contact"
-      content: "Contact the Ruby on Rails Tutorial about the sample app at the
-      <a href=%{link}> contact page</a>"
   users:
     new:
       title: "New Member"
-      heading: "Sign Up Member"
+      heading: "Đăng ký thành viên"
       content: "Content Update Later"
       t_create: "Create my account"
       btn_submit: "Submit"
@@ -186,3 +132,10 @@ en:
       confirm: "You sure?"
       delete: "Delete"
       post_time: "Posted %{time} ago."
+  expenses:
+    new:
+      title: "Nay bạn tiêu gì. Điền vào nhé !!!"
+      heading: "Nay bạn tiêu gì. Điền vào nhé !!!n"
+    form:
+      description: "Mua những gì nào"
+      amount: "Tổng theo đơn vị (K)"

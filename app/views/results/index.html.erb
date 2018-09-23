@@ -1,0 +1,20 @@
+
+<div class="col-md-12 col-sm-12" id="main">
+
+  <h1>Tổng tiêu : <%= @tongtien %></h1>
+  <h3>Trung bình: <%= @tien_tb %> K</h3>
+  <table>
+    <tr>
+      <th>Tên</th>
+      <th>Tổng tiền</th>
+      <th>Nhận lại</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+          <td><%= user.name %></td>
+          <td><%= user.amount %></td>
+          <td><%= user.amount - @tien_tb %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

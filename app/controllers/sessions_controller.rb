@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by email: (params_session :email)
     if user && user.authenticate(params_session(:password))
       log_in user
-      redirect_to user
+      redirect_to root_path
     else
       flash[:danger] = t "controllers.session.m_unsuccess"
       render :new

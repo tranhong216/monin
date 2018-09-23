@@ -1,7 +1,9 @@
 <% provide :title, t(".title") %>
-<h1><%= t ".heading" %></h1>
+
 <div>
-  <%= link_to "Create User", new_user_path, class: "btn btn-primary" %>
+  <% if current_user.admin? %>
+    <%= link_to "Create User", new_user_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
 <%= will_paginate %>
 <ul class="users">

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: %i(index edit update destroy)
   before_action :find_user, only: %i(show edit update destroy)
   before_action :correct_user, only: %i(edit update)
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: %i(new create destroy)
 
   def index
     @users = User.paginate page: params[:page]
@@ -15,10 +15,10 @@ class UsersController < ApplicationController
   def show; end
 
   def create
-    @user = User.new user_params
+    @user = User.new user_params.merge(password: "123456")
     if @user.save
       flash[:info] = t "controllers.user.email_active"
-      redirect_to root_url
+      redirect_to users_path
     else
       render :new
     end
@@ -55,6 +55,7 @@ class UsersController < ApplicationController
   end
 
   def admin_user
+    flash[:danger] = "Không được phép truy cập"
     redirect_to root_url unless current_user.admin?
   end
 
