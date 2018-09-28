@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   def index
     last_time = RangeTime.last
-    @expenses = last_time.money.order(id: :desc) if last_time
+    @expenses = last_time ? last_time.money.order(id: :desc) : []
   end
 
   def new
