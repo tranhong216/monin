@@ -18,8 +18,9 @@ $white: #fff;
 }
 
 .image-body {
-  // padding-top: 60px;
-  
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg);
+  background-size: cover;
+
 }
 
 section {
@@ -326,4 +327,17 @@ input {
   border-radius: 3px;
   color: $white;
   padding: 5px;
+}
+
+#main {
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.nav {
+  color: white;
+  a:hover {
+    color: #1f1c1c;
+    background-color: #eeeeee4f;
+  }
 }

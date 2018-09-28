@@ -1,6 +1,6 @@
 
 User.create!(name: "Tran Hong", email: "tran.manh.hong@framgia.com", password: "123456",
-password_confirmation: "123456")
+password_confirmation: "123456", admin: true)
 
 User.create!(name: "Nguyen Thuy", email: "nguyen.thi.thuy@framgia.com", password: "123456",
   password_confirmation: "123456")

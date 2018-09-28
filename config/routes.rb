@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :expenses, controller: :expenses, only: %i(index new create)
+  resources :expenses, controller: :expenses
   resources :results, controller: :results
+  resources :range_times
 end

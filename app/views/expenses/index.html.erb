@@ -9,6 +9,9 @@
         <th>Ngày</th>
         <th>Mua gì</th>
         <th>Tổng</th>
+        <% if current_user.admin? %>
+          <th>Tool</th>
+        <% end %>
       </tr>
       <%= render @expenses %>
     </table>

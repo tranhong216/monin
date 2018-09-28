@@ -58,8 +58,8 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
-  def amount
-    money.expense.from_month.sum(:amount)
+  def amount(range_time)
+    money.by_time(range_time).sum(:amount)
   end
 
   private

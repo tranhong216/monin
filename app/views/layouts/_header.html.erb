@@ -5,7 +5,8 @@
         <% if logged_in? %>
           <li><%= link_to "Nhập Chi Tiêu", root_path %></li>
           <li><%= link_to "Lịch Sử Chi", expenses_path %></li>
-          <li><%= link_to "Thống Kê", results_path %></li>
+          <li><%= link_to "Thống kê hiện tại", results_path %></li>
+          <li><%= link_to "Lịch Sử Chốt Sổ", range_times_path %></li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle",
               data: {toggle: "dropdown"} do %>
