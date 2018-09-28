@@ -3,7 +3,8 @@ class ExpensesController < ApplicationController
   before_action :admin_user, only: %i(edit update destroy)
 
   def index
-    @expenses = RangeTime.last.try(:money).order(id: :desc)
+    last_time = RangeTime.last
+    @expenses = last_time.money.order(id: :desc) if last_time
   end
 
   def new
