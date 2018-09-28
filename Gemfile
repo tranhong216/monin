@@ -31,7 +31,6 @@ gem "pg"
 gem 'rack-cors', require: 'rack/cors'
 # gem 'mini_racer', platforms: :ruby
 
-
 group :development, :test do
   gem "better_errors"
   gem "database_cleaner"
